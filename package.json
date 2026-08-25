@@ -3,13 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
+    "dev": "cross-env NODE_OPTIONS=--use-system-ca next dev",
+    "build": "cross-env NODE_OPTIONS=--use-system-ca next build",
+    "start": "cross-env NODE_OPTIONS=--use-system-ca next start",
+    "lint": "eslint",
+    "build:legal-embeddings": "cross-env NODE_OPTIONS=--use-system-ca npx tsx scripts/build-legal-embeddings.ts",
+    "test": "npx tsx --test lib/verify-source-url.test.ts lib/parse-applicable-laws.test.ts lib/parse-adilet-articles.test.ts lib/build-core-legal-sources.test.ts lib/confirm-sources-with-search.test.ts lib/search-legal-sources.test.ts lib/evaluate-source-relevance.test.ts lib/fetch-official-source-content.test.ts lib/enrich-search-results.test.ts lib/core-legal-acts.test.ts lib/auxiliary-provisions.test.ts lib/legal-prompt.test.ts lib/extract-document-text.test.ts app/api/analyze/route.test.ts app/components/analysis-result.test.ts && npx tsx lib/legal-information-status.checks.ts"
   },
   "dependencies": {
+    "js-tiktoken": "^1.0.21",
+    "mammoth": "^1.12.0",
     "next": "16.2.10",
+    "openai": "^6.46.0",
     "react": "19.2.4",
     "react-dom": "19.2.4"
   },
@@ -18,6 +23,8 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "cross-env": "^10.1.0",
+    "docx": "^9.7.1",
     "eslint": "^9",
     "eslint-config-next": "16.2.10",
     "tailwindcss": "^4",

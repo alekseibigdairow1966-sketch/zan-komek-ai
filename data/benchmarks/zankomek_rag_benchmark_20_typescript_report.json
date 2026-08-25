@@ -1,0 +1,300 @@
+{
+  "benchmark_name": "ZanKomek RAG Benchmark v1 — TypeScript Hybrid Runtime Validation",
+  "cases": 20,
+  "source_stage": "HYBRID-RERANK-BENCHMARK-RUN-01",
+  "measurement_note": "Ranks measured before the prompt Top-K truncation, so Recall@10 and above are computable. Article rank is the minimum 1-based rank of any chunk matching act_id + article_number. Values recorded from the completed RUN-01 execution; no benchmark was re-run and no embeddings request was made to produce this file.",
+  "artifact": {
+    "artifact_version": "1",
+    "corpus_version": "2026-08-24",
+    "record_count": 2002,
+    "unique_articles": 1999,
+    "embedding_model": "text-embedding-3-small",
+    "embedding_dimensions": 1536
+  },
+  "hybrid_config": {
+    "candidate_pool_size": 50,
+    "title_overlap_alpha": 0.15,
+    "predicted_act_soft_boost": 0.05,
+    "prompt_top_k": 5,
+    "normalization_note": "light deterministic Russian suffix normalizer; frozen Snowball reference parity 51/51"
+  },
+  "typescript_semantic_metrics": {
+    "law_recall_at_1": 0.9,
+    "primary_article_recall_at_1": 0.3,
+    "primary_article_recall_at_3": 0.35,
+    "primary_article_recall_at_5": 0.4,
+    "primary_article_recall_at_10": 0.65,
+    "primary_article_recall_at_20": 0.9,
+    "primary_article_recall_at_30": 0.95,
+    "primary_article_recall_at_50": 1.0,
+    "mean_primary_rank": 9.6,
+    "median_primary_rank": 7.0,
+    "max_primary_rank": 47,
+    "ranked_cases": 20,
+    "null_cases": 0
+  },
+  "typescript_hybrid_metrics": {
+    "primary_article_recall_at_1": 0.4,
+    "primary_article_recall_at_3": 0.5,
+    "primary_article_recall_at_5": 0.6,
+    "primary_article_recall_at_10": 0.8,
+    "primary_article_recall_at_20": 0.95,
+    "primary_article_recall_at_30": 1.0,
+    "primary_article_recall_at_50": 1.0,
+    "mean_primary_rank": 5.9,
+    "median_primary_rank": 3.5,
+    "max_primary_rank": 23,
+    "ranked_cases": 20,
+    "null_cases": 0
+  },
+  "colab_reference": {
+    "source_file": "data/benchmarks/zankomek_rag_benchmark_20_report.json",
+    "semantic_mean_primary_rank": 9.55,
+    "semantic_median_primary_rank": 7.0,
+    "semantic_max_primary_rank": 47,
+    "hybrid_mean_primary_rank": 5.85,
+    "hybrid_median_primary_rank": 3.5,
+    "hybrid_max_primary_rank": 23,
+    "semantic_recall": {
+      "law_recall_at_1": 0.9,
+      "primary_article_recall_at_1": 0.3,
+      "primary_article_recall_at_3": 0.35,
+      "primary_article_recall_at_5": 0.4,
+      "primary_article_recall_at_10": 0.65,
+      "primary_article_recall_at_20": 0.9,
+      "primary_article_recall_at_30": 0.95,
+      "primary_article_recall_at_50": 1.0
+    },
+    "hybrid_recall": {
+      "primary_article_recall_at_1": 0.4,
+      "primary_article_recall_at_3": 0.5,
+      "primary_article_recall_at_5": 0.6,
+      "primary_article_recall_at_10": 0.8,
+      "primary_article_recall_at_20": 0.95,
+      "primary_article_recall_at_30": 1.0,
+      "primary_article_recall_at_50": 1.0
+    },
+    "recall_metrics_match_typescript": true,
+    "mean_rank_delta_semantic": 0.05,
+    "mean_rank_delta_hybrid": 0.05
+  },
+  "comparison_summary": {
+    "identical_semantic_primary_rank_cases": 19,
+    "different_semantic_primary_rank_cases": 1,
+    "identical_hybrid_primary_rank_cases": 16,
+    "different_hybrid_primary_rank_cases": 4,
+    "hybrid_gold_in_pool": "20/20",
+    "aggregate_recall_matches_colab": true,
+    "semantic_rank_divergences": [
+      {
+        "case_id": "civil_special_buyer_rights_defective_01",
+        "typescript": 14,
+        "colab": 13
+      }
+    ],
+    "hybrid_rank_divergences": [
+      {
+        "case_id": "personal_data_excessive_collection_01",
+        "typescript": 12,
+        "colab": 13
+      },
+      {
+        "case_id": "personal_data_consent_01",
+        "typescript": 9,
+        "colab": 10
+      },
+      {
+        "case_id": "consumer_seller_duties_defective_01",
+        "typescript": 13,
+        "colab": 11
+      },
+      {
+        "case_id": "consumer_complaint_to_seller_01",
+        "typescript": 15,
+        "colab": 14
+      }
+    ]
+  },
+  "cases_detail": [
+    {
+      "case_id": "consumer_defective_kettle_01",
+      "semantic_top1_act": "consumer-protection-law-kz",
+      "semantic_law_at_1": true,
+      "semantic_primary_rank": 7,
+      "hybrid_primary_rank": 4,
+      "hybrid_in_pool": true,
+      "rank_delta": 3
+    },
+    {
+      "case_id": "personal_data_excessive_collection_01",
+      "semantic_top1_act": "personal-data-law-kz",
+      "semantic_law_at_1": true,
+      "semantic_primary_rank": 10,
+      "hybrid_primary_rank": 12,
+      "hybrid_in_pool": true,
+      "rank_delta": -2
+    },
+    {
+      "case_id": "labour_salary_delay_01",
+      "semantic_top1_act": "labour-code-kz",
+      "semantic_law_at_1": true,
+      "semantic_primary_rank": 1,
+      "hybrid_primary_rank": 1,
+      "hybrid_in_pool": true,
+      "rank_delta": 0
+    },
+    {
+      "case_id": "civil_unilateral_refusal_01",
+      "semantic_top1_act": "civil-code-general-kz",
+      "semantic_law_at_1": true,
+      "semantic_primary_rank": 1,
+      "hybrid_primary_rank": 1,
+      "hybrid_in_pool": true,
+      "rank_delta": 0
+    },
+    {
+      "case_id": "admin_appeal_decision_01",
+      "semantic_top1_act": "administrative-procedure-code-kz",
+      "semantic_law_at_1": true,
+      "semantic_primary_rank": 4,
+      "hybrid_primary_rank": 9,
+      "hybrid_in_pool": true,
+      "rank_delta": -5
+    },
+    {
+      "case_id": "entrepreneur_right_to_appeal_01",
+      "semantic_top1_act": "entrepreneurial-code-kz",
+      "semantic_law_at_1": true,
+      "semantic_primary_rank": 12,
+      "hybrid_primary_rank": 9,
+      "hybrid_in_pool": true,
+      "rank_delta": 3
+    },
+    {
+      "case_id": "civil_special_loan_return_01",
+      "semantic_top1_act": "civil-code-special-kz",
+      "semantic_law_at_1": true,
+      "semantic_primary_rank": 7,
+      "hybrid_primary_rank": 5,
+      "hybrid_in_pool": true,
+      "rank_delta": 2
+    },
+    {
+      "case_id": "personal_data_consent_01",
+      "semantic_top1_act": "personal-data-law-kz",
+      "semantic_law_at_1": true,
+      "semantic_primary_rank": 6,
+      "hybrid_primary_rank": 9,
+      "hybrid_in_pool": true,
+      "rank_delta": -3
+    },
+    {
+      "case_id": "consumer_defective_return_01",
+      "semantic_top1_act": "consumer-protection-law-kz",
+      "semantic_law_at_1": true,
+      "semantic_primary_rank": 14,
+      "hybrid_primary_rank": 6,
+      "hybrid_in_pool": true,
+      "rank_delta": 8
+    },
+    {
+      "case_id": "labour_annual_leave_01",
+      "semantic_top1_act": "labour-code-kz",
+      "semantic_law_at_1": true,
+      "semantic_primary_rank": 2,
+      "hybrid_primary_rank": 1,
+      "hybrid_in_pool": true,
+      "rank_delta": 1
+    },
+    {
+      "case_id": "admin_appeal_deadline_01",
+      "semantic_top1_act": "administrative-procedure-code-kz",
+      "semantic_law_at_1": true,
+      "semantic_primary_rank": 1,
+      "hybrid_primary_rank": 1,
+      "hybrid_in_pool": true,
+      "rank_delta": 0
+    },
+    {
+      "case_id": "labour_working_hours_01",
+      "semantic_top1_act": "labour-code-kz",
+      "semantic_law_at_1": true,
+      "semantic_primary_rank": 1,
+      "hybrid_primary_rank": 1,
+      "hybrid_in_pool": true,
+      "rank_delta": 0
+    },
+    {
+      "case_id": "civil_wrongful_money_use_01",
+      "semantic_top1_act": "civil-code-general-kz",
+      "semantic_law_at_1": true,
+      "semantic_primary_rank": 1,
+      "hybrid_primary_rank": 1,
+      "hybrid_in_pool": true,
+      "rank_delta": 0
+    },
+    {
+      "case_id": "consumer_seller_duties_defective_01",
+      "semantic_top1_act": "consumer-protection-law-kz",
+      "semantic_law_at_1": true,
+      "semantic_primary_rank": 14,
+      "hybrid_primary_rank": 13,
+      "hybrid_in_pool": true,
+      "rank_delta": 1
+    },
+    {
+      "case_id": "civil_special_buyer_rights_defective_01",
+      "semantic_top1_act": "consumer-protection-law-kz",
+      "semantic_law_at_1": false,
+      "semantic_primary_rank": 14,
+      "hybrid_primary_rank": 2,
+      "hybrid_in_pool": true,
+      "rank_delta": 12
+    },
+    {
+      "case_id": "personal_data_access_01",
+      "semantic_top1_act": "personal-data-law-kz",
+      "semantic_law_at_1": true,
+      "semantic_primary_rank": 1,
+      "hybrid_primary_rank": 1,
+      "hybrid_in_pool": true,
+      "rank_delta": 0
+    },
+    {
+      "case_id": "entrepreneur_inspection_violation_01",
+      "semantic_top1_act": "entrepreneurial-code-kz",
+      "semantic_law_at_1": true,
+      "semantic_primary_rank": 13,
+      "hybrid_primary_rank": 3,
+      "hybrid_in_pool": true,
+      "rank_delta": 10
+    },
+    {
+      "case_id": "civil_obligation_deadline_01",
+      "semantic_top1_act": "consumer-protection-law-kz",
+      "semantic_law_at_1": false,
+      "semantic_primary_rank": 7,
+      "hybrid_primary_rank": 1,
+      "hybrid_in_pool": true,
+      "rank_delta": 6
+    },
+    {
+      "case_id": "labour_probation_period_01",
+      "semantic_top1_act": "labour-code-kz",
+      "semantic_law_at_1": true,
+      "semantic_primary_rank": 47,
+      "hybrid_primary_rank": 23,
+      "hybrid_in_pool": true,
+      "rank_delta": 24
+    },
+    {
+      "case_id": "consumer_complaint_to_seller_01",
+      "semantic_top1_act": "consumer-protection-law-kz",
+      "semantic_law_at_1": true,
+      "semantic_primary_rank": 29,
+      "hybrid_primary_rank": 15,
+      "hybrid_in_pool": true,
+      "rank_delta": 14
+    }
+  ]
+}
